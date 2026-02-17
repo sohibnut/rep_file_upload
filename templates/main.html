@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>GLOBAL_DATA_REPOSITORY_V2.0</title>
+    <title>SNT COMPUTING TECHNOLOGIES 1.0</title>
     <style>
         body {
             background-color: #ffffff;
@@ -135,7 +135,7 @@
     <table width="100%">
         <tr>
             <td style="font-size: 28px; font-weight: bold; font-family: 'Times New Roman', serif;">
-                SYSTEM_ARCHIVE_NET
+                GL BASE [SYSTEM_ARCHIVE_NET]
             </td>
             <td align="right">
                 <input type="text" class="search-box" value="Search Database...">
@@ -146,7 +146,7 @@
 </div>
 
 <div class="nav-strip">
-    <a href="#">[Home]</a> <a href="#">[File Library]</a> <a href="#">[User Manuals]</a> <a href="#">[Global Stats]</a> <a href="#">[Mirror List]</a> <a href="#">[Contact]</a>
+    <a href="{% url "admin:index" %}">[Home]</a> <a href="#">[File Library]</a> <a href="#">[User Manuals]</a> <a href="#">[Global Stats]</a> <a href="#">[Mirror List]</a> <a href="#">[Contact]</a>
 </div>
 
 <table class="wrapper">
@@ -176,7 +176,10 @@
 
         <td class="main-content">
             <div class="highlight-box">
-                <strong>URGENT NOTICE:</strong> The primary database will be offline for maintenance on Sunday at 03:00 GMT. Please synchronize your local mirrors before then.
+                <strong>DANGER NOTICE:</strong> The primary database will be offline for maintenance on Sunday at 03:00 GMT. Please synchronize your local mirrors before then.
+            </div>
+            <div class="highlight-box">
+                <strong>DANGER NOTICE:</strong> All files in the database contain vulnerable elements. If you are using any of the following operating systems, please do not download them: Windows 98, 2000, XP, 7, 8, 8.1, 10, 11, or MacOS.
             </div>
 
             <h2>Main Data Index (Sector 7G)</h2>
@@ -223,8 +226,8 @@
 </table>
 
 <div class="footer">
-    <p>Powered by Apache/1.3.12 (Unix) PHP/3.0.15<br>
-    Copyright &copy; 1998-2026 GLOBAL_DATA_CORP. All rights reserved.<br>
+    <p>Powered by NGINX (Ubuntu) Python/3.12.10<br>
+    Copyright &copy; 1998-2026 SOHIBNUT DATA CORP. All rights reserved.<br>
     <img src="https://web.archive.org/web/20090831135431/http://geocities.com/SiliconValley/Peaks/1301/ie_static.gif" alt="IE">
     <img src="https://web.archive.org/web/20091024040924/http://geocities.com/Heartland/Acres/3151/netscape.gif" alt="Netscape">
     </p>
@@ -234,7 +237,7 @@
     // Generating a BIG amount of data automatically
     const tableBody = document.getElementById('dynamic-data');
     const categories = ["Kernel", "Driver", "User-Lib", "Bin-File", "Header"];
-    const priorities = ["Low", "Normal", "High", "URGENT"];
+    const priorities = ["Low", "Normal", "High", "DANGER"];
     
     for (let i = 2500; i < 2540; i++) {
         const row = document.createElement('tr');
@@ -246,7 +249,7 @@
             <td><strong>sys_resource_${i}.dat</strong></td>
             <td>${cat}</td>
             <td>${(Math.random() * 10).toFixed(2)} MB</td>
-            <td style="color: ${prio === 'URGENT' ? 'red' : 'black'}">${prio}</td>
+            <td style="color: ${prio === 'DANGER' ? 'red' : prio === 'Low' ?  'green' : 'black'}">${prio}</td>
             <td><code>0x${Math.random().toString(16).substring(2, 8).toUpperCase()}</code></td>
         `;
         tableBody.appendChild(row);
