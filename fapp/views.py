@@ -1,6 +1,7 @@
 # apps/files/views.py
 from django.conf import settings
 from django.http import HttpResponse, FileResponse, Http404
+from django.shortcuts import render
 from .models import File
 
 def download_by_code(request, code):
@@ -21,3 +22,6 @@ def download_by_code(request, code):
     response['X-Accel-Redirect'] = f"/protected/{file_obj.file.name}"
 
     return response
+def main(request):
+    data = {}
+    return render(request, "main.html", data)

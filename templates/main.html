@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GLOBAL_DATA_REPOSITORY_V2.0</title>
+    <style>
+        body {
+            background-color: #ffffff;
+            color: #000000;
+            font-family: "Verdana", "Geneva", sans-serif;
+            font-size: 14px; /* Slightly bigger as requested */
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        /* Top Banner */
+        .header-main {
+            background-color: #004080;
+            color: #ffffff;
+            padding: 10px 20px;
+            border-bottom: 2px solid #000;
+        }
+
+        .nav-strip {
+            background-color: #d3d3d3;
+            border-bottom: 1px solid #808080;
+            padding: 4px 20px;
+            font-size: 12px;
+        }
+
+        .nav-strip a { color: #000; text-decoration: none; margin-right: 15px; font-weight: bold; }
+        .nav-strip a:hover { text-decoration: underline; }
+
+        /* Layout Table */
+        .wrapper {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .sidebar {
+            width: 200px;
+            background-color: #f0f0f0;
+            border-right: 1px solid #cccccc;
+            vertical-align: top;
+            padding: 15px;
+        }
+
+        .main-content {
+            vertical-align: top;
+            padding: 20px;
+        }
+
+        /* Section Styling */
+        .section-header {
+            background-color: #e0e0e0;
+            border: 1px solid #ababab;
+            padding: 5px 10px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        /* Data Tables */
+        .data-grid {
+            width: 100%;
+            border: 1px solid #808080;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        .data-grid th {
+            background-color: #4a4a4a;
+            color: white;
+            text-align: left;
+            padding: 6px;
+            font-size: 13px;
+        }
+
+        .data-grid td {
+            border: 1px solid #cccccc;
+            padding: 6px;
+            font-size: 13px;
+        }
+
+        .data-grid tr:hover { background-color: #ffffcc; }
+
+        /* Buttons & Inputs */
+        .win-btn {
+            background-color: #c0c0c0;
+            border: 2px outset #fff;
+            padding: 2px 10px;
+            font-size: 12px;
+            cursor: pointer;
+        }
+
+        .win-btn:active { border: 2px inset #fff; }
+
+        .search-box {
+            border: 2px inset #fff;
+            padding: 3px;
+            width: 140px;
+        }
+
+        /* Sidebar Lists */
+        .side-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 20px 0;
+        }
+
+        .side-list li {
+            padding: 3px 0;
+            border-bottom: 1px dashed #cccccc;
+        }
+
+        .footer {
+            background-color: #f0f0f0;
+            border-top: 1px solid #808080;
+            text-align: center;
+            padding: 20px;
+            font-size: 12px;
+        }
+
+        .highlight-box {
+            border: 1px solid #ff0000;
+            background-color: #fff0f0;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header-main">
+    <table width="100%">
+        <tr>
+            <td style="font-size: 28px; font-weight: bold; font-family: 'Times New Roman', serif;">
+                SYSTEM_ARCHIVE_NET
+            </td>
+            <td align="right">
+                <input type="text" class="search-box" value="Search Database...">
+                <button class="win-btn">Go!</button>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div class="nav-strip">
+    <a href="#">[Home]</a> <a href="#">[File Library]</a> <a href="#">[User Manuals]</a> <a href="#">[Global Stats]</a> <a href="#">[Mirror List]</a> <a href="#">[Contact]</a>
+</div>
+
+<table class="wrapper">
+    <tr>
+        <td class="sidebar">
+            <div class="section-header">Navigation</div>
+            <ul class="side-list">
+                <li><a href="#">Root Directory</a></li>
+                <li><a href="#">System Binaries</a></li>
+                <li><a href="#">Driver Updates</a></li>
+                <li><a href="#">Legacy Archives</a></li>
+                <li><a href="#">Encryption Keys</a></li>
+            </ul>
+
+            <div class="section-header">Quick Stats</div>
+            <div style="font-size: 12px;">
+                <b>Server:</b> Node-Alpha-01<br>
+                <b>Uptime:</b> 432 Days<br>
+                <b>Load:</b> 0.42 / 1.00<br>
+                <b>Users:</b> 1,024 Online
+            </div>
+            <br>
+            <div class="section-header">Support</div>
+            <p style="font-size: 11px;">If you find this data useful, consider donating to our hosting fund.</p>
+            <center><button class="win-btn">Donate $5</button></center>
+        </td>
+
+        <td class="main-content">
+            <div class="highlight-box">
+                <strong>URGENT NOTICE:</strong> The primary database will be offline for maintenance on Sunday at 03:00 GMT. Please synchronize your local mirrors before then.
+            </div>
+
+            <h2>Main Data Index (Sector 7G)</h2>
+            <p>Below is the real-time feed of incoming data packets and system logs. Use the filters above to narrow your search results.</p>
+
+            <table class="data-grid">
+                <thead>
+                    <tr>
+                        <th>Entry ID</th>
+                        <th>Resource Name</th>
+                        <th>Category</th>
+                        <th>Size</th>
+                        <th>Priority</th>
+                        <th>Checksum</th>
+                    </tr>
+                </thead>
+                <tbody id="dynamic-data">
+                    </tbody>
+            </table>
+
+            <h2>System Documentation</h2>
+            <p>Our comprehensive manuals cover everything from initial setup to advanced kernel debugging. All files are served in plain text to ensure maximum compatibility across all operating systems.</p>
+            
+            <div style="display: flex; gap: 20px;">
+                <div style="flex: 1; border: 1px solid #ccc; padding: 10px;">
+                    <strong>v1.0 Series</strong>
+                    <ul class="side-list">
+                        <li><a href="#">Installation Guide.txt</a></li>
+                        <li><a href="#">Hardware Compatibility.txt</a></li>
+                        <li><a href="#">Network Config.txt</a></li>
+                    </ul>
+                </div>
+                <div style="flex: 1; border: 1px solid #ccc; padding: 10px;">
+                    <strong>v2.0 Beta</strong>
+                    <ul class="side-list">
+                        <li><a href="#">New Features.txt</a></li>
+                        <li><a href="#">Migration Script.sh</a></li>
+                        <li><a href="#">Known Issues.txt</a></li>
+                    </ul>
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<div class="footer">
+    <p>Powered by Apache/1.3.12 (Unix) PHP/3.0.15<br>
+    Copyright &copy; 1998-2026 GLOBAL_DATA_CORP. All rights reserved.<br>
+    <img src="https://web.archive.org/web/20090831135431/http://geocities.com/SiliconValley/Peaks/1301/ie_static.gif" alt="IE">
+    <img src="https://web.archive.org/web/20091024040924/http://geocities.com/Heartland/Acres/3151/netscape.gif" alt="Netscape">
+    </p>
+</div>
+
+<script>
+    // Generating a BIG amount of data automatically
+    const tableBody = document.getElementById('dynamic-data');
+    const categories = ["Kernel", "Driver", "User-Lib", "Bin-File", "Header"];
+    const priorities = ["Low", "Normal", "High", "URGENT"];
+    
+    for (let i = 2500; i < 2540; i++) {
+        const row = document.createElement('tr');
+        const cat = categories[Math.floor(Math.random() * categories.length)];
+        const prio = priorities[Math.floor(Math.random() * priorities.length)];
+        
+        row.innerHTML = `
+            <td>#${i}</td>
+            <td><strong>sys_resource_${i}.dat</strong></td>
+            <td>${cat}</td>
+            <td>${(Math.random() * 10).toFixed(2)} MB</td>
+            <td style="color: ${prio === 'URGENT' ? 'red' : 'black'}">${prio}</td>
+            <td><code>0x${Math.random().toString(16).substring(2, 8).toUpperCase()}</code></td>
+        `;
+        tableBody.appendChild(row);
+    }
+</script>
+
+</body>
+</html>
